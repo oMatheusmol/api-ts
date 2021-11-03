@@ -1,0 +1,9 @@
+apps:
+  - name: API-Typescript_Node.js
+    script: './src/startup.js'
+    instance_var: 'INSTANCE_ID'
+    max_memory_restart: 100M
+    exec_mode: 'fork'
+    instances: 1
+    env:
+      NODE_ENV: development

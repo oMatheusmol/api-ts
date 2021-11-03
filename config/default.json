@@ -1,0 +1,24 @@
+{
+  "SERVER": {
+    "NAME": "Api Reservas Info",
+    "PORT": 7000,
+    "HOST": "https://apilocaviahml.infosistemas.com.br:3015",
+    "AUTH": {
+      "USER": "admin_info_dev",
+      "PASSWORD": "$2y$08$a6RXfAuDIvaTQg5fQdoToO2zvyv2UEJkJF1NWeL9FgSoACf38wyQG",
+      "SECRET": "68324255bd122b4054aa472cb7fb8f6b"
+    },
+    "TEST_TOKEN": ""
+  },
+  "DATABASE": {
+    "16": {
+      "TYPE": "mssql",
+      "INSTANCE_NAME": "1433",
+      "USER": "sa",
+      "PASSWORD": "testeDb",
+      "HOST": "INFOSISTEMAS116\\SQLEXPRESS",
+      "PORT": 1433,
+      "NAME": "testeDb"
+    }
+  }
+}

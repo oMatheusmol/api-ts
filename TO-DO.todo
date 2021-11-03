@@ -1,0 +1,20 @@
+#28102 - CONVERTER API RESERVAS PARA NODEJS
+
+Tarefas Iniciais:
+  ✔ Converter Código passado para Typescript + TypeORM. @done(21-02-18 07:53)
+  ☐ Possibilitar o vínculo de determinados "Grupos de Tarifas" por "Tipo de Proteção".
+    OBS: Está em 'Grupo de Veículos'
+
+Problema Identificado: 
+Como não existe vínculo entre as proteções e as tarifas cadastradas, 
+para as locadoras que utilizam o "Reservas Mobile" e o "Reservas Web". Todas as proteções 
+cadastradas como "Proteção Web" no formulário "Tipos de Proteção" são apresentadas e de forma 
+desassociada as tarifas e após a escolha pelo cliente, gerando 2 dificuldades
+
+  ☐ Para locadoras com muitos grupos / tarifas de proteção (com valores diferentes), a "compra" 
+  pelo cliente é mais complexa, permitindo a seleção de "proteções" incompatíveis com o 
+  grupo/tarifa selecionado.
+
+  ☐ Os formulários "Abrir Contrato de Locação", "Fechar Contrato de Locação", "Contrato Master" e 
+  "Reservas" apresentam, todas as proteções cadastradas para todos os "Grupos/Tarifas Veículos", 
+  induzindo a erros e aumentando a possibilidade de fraudes.

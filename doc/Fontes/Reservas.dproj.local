@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/12/17 13:44:33.000.996,=C:\Projetos\Web Server Locavia\Reservas\Reservas\FormUnit1.pas</Transaction>
+    <Transaction>2016/12/17 13:44:34.000.966,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\json2.js</Transaction>
+    <Transaction>2016/12/17 13:44:34.000.951,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\serverfunctionexecutor.js</Transaction>
+    <Transaction>2016/12/17 13:44:34.000.934,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\base64.js</Transaction>
+    <Transaction>2016/12/17 13:44:34.000.826,=C:\Projetos\Web Server Locavia\Reservas\Reservas\WebModuleUnit1.pas</Transaction>
+    <Transaction>2016/12/17 13:44:34.000.754,=C:\Projetos\Web Server Locavia\Reservas\Reservas\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.135,=C:\Projetos\Web Server Locavia\Reservas\Reservas\css\main.css</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.120,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\serverfunctioninvoker.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.039,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\serverfunctions.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.014,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\callbackframework.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.048,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\base64-min.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.068,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\serverfunctionexecutor-min.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.092,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\connection.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.080,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\callbackframework-min.js</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.168,=C:\Projetos\Web Server Locavia\Reservas\Reservas\templates\reversestring.html</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.224,=C:\Projetos\Web Server Locavia\Reservas\Reservas\images\expand.png</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.204,=C:\Projetos\Web Server Locavia\Reservas\Reservas\images\collapse.png</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.186,=C:\Projetos\Web Server Locavia\Reservas\Reservas\templates\serverfunctioninvoker.html</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.151,=C:\Projetos\Web Server Locavia\Reservas\Reservas\css\serverfunctioninvoker.css</Transaction>
+    <Transaction>2016/12/17 13:44:35.000.058,=C:\Projetos\Web Server Locavia\Reservas\Reservas\js\json2-min.js</Transaction>
+    <Transaction>2016/12/17 13:46:55.000.456,C:\Projetos\Web Server Locavia\Reservas\Reservas\UFormServer.pas=C:\Projetos\Web Server Locavia\Reservas\Reservas\FormUnit1.pas</Transaction>
+    <Transaction>2016/12/17 13:46:55.000.456,C:\Projetos\Web Server Locavia\Reservas\Reservas\UFormServer.dfm=C:\Projetos\Web Server Locavia\Reservas\Reservas\FormUnit1.dfm</Transaction>
+    <Transaction>2016/12/17 13:49:03.000.280,=C:\Projetos\Web Server Locavia\Reservas\Fontes\UServerMetodos.pas</Transaction>
+    <Transaction>2016/12/17 13:49:03.000.354,=C:\Projetos\Web Server Locavia\Reservas\Fontes\UWebModulo.pas</Transaction>
+    <Transaction>2016/12/17 13:49:03.000.237,=C:\Projetos\Web Server Locavia\Reservas\Fontes\URotinasSistema.pas</Transaction>
+  </Transactions>
+</BorlandProject>

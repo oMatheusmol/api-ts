@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "index.ts",
+    "ormconfig.ts"
+, "src/app/common/utils/index.js", "src/app/common/exceptions/exception", "src/app/common/helpers/response.helper", "src/app/controllers/base.controller.js"  ]
+}

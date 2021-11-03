@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B9AF41DB-0D26-4901-92ED-07D0A8611694}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ReservaServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Reservas.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ReservaServer">
+        <MSBuild Projects="ReservaServer.dproj"/>
+    </Target>
+    <Target Name="ReservaServer:Clean">
+        <MSBuild Projects="ReservaServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReservaServer:Make">
+        <MSBuild Projects="ReservaServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Reservas">
+        <MSBuild Projects="Reservas.dproj"/>
+    </Target>
+    <Target Name="Reservas:Clean">
+        <MSBuild Projects="Reservas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Reservas:Make">
+        <MSBuild Projects="Reservas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ReservaServer;Reservas"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ReservaServer:Clean;Reservas:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ReservaServer:Make;Reservas:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
