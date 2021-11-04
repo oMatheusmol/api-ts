@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 import path from 'path';
-import ReservasRoutes from '../app/routes/Reservas.routes';
+import ReservasRoutes from './Reservas.routes';
 
 const router = Router();
 

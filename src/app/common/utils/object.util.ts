@@ -45,9 +45,9 @@ export default class ObjectUtil {
         // Otherwise, does it have any properties of its own?
         // Note that this doesn't handle
         // toString and valueOf enumeration bugs in IE < 9
-        for (var key in obj) {
-            if (hasOwnProperty.call(obj, key)) return false;
-        }
+        // for (var key in obj) {
+        //     if (hasOwnProperty.call(obj, key)) return false;
+        // }
 
         return true;
     }

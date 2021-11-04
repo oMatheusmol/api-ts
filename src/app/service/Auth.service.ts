@@ -1,4 +1,4 @@
-import GenerateUserToken from "../Utils/GenerateToken";
+import GenerateUserToken from "../common/utils/GenerateToken";
 
 class AuthService {
   public async login(username: string, password: string): Promise<any> {

@@ -5,10 +5,10 @@ import helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
-import AuthController from './Auth/Auth.controller';
-import Controllers from './Server/Controllers';
+import AuthController from '../app/controllers/Auth.controller';
+import Controllers from '../app/routes/index.routes';
 import path from 'path';
-import { ControllerMiddleware } from './Server/Middlewares/Controller.middleware';
+import { ControllerMiddleware } from '../app/Middlewares/Controller.middleware';
 
 class AppController {
   constructor(public app = express()) {
@@ -22,7 +22,7 @@ class AppController {
     this.app.use(urlencoded({ extended: false }));
     this.app.use(json());
     
-    const swaggerDocument = YAML.load(path.resolve(__dirname,'./Swagger/swagger.yaml'));
+    const swaggerDocument = YAML.load(path.resolve(__dirname,'../app/Swagger/swagger.yaml'));
     this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
   }
 

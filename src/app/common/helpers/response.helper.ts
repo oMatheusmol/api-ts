@@ -1,7 +1,7 @@
 
 'use strict';
 import Exception from '../exceptions/exception';
-import log from '../../../infra/logger/logger';
+//import log from '../../../infra/logger/logger';
 import HttpStatusCode from './http-status-code';
 import { Request, Response } from 'express';
 

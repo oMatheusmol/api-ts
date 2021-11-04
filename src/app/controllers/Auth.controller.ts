@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import AuthService from './Auth.service';
+import AuthService from '../service/Auth.service';
 
 const AuthRouter = Router();
 const ControllerName = '/fca_login';

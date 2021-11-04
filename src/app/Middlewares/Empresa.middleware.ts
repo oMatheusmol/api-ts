@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { databaseConnect } from '../Database';
+import { databaseConnect } from '../../infra/database/Database';
 
 export const ConnectionMiddleware = async (req: any, res: Response) => {
   try {

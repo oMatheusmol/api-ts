@@ -15,8 +15,9 @@ export default class BaseController {
         this._repository = repository;
     }
 
-    async get(req: Request, res: Response) {
+    async get(req: any, res: any) {
         try {
+            console.log(req);
             const params = req.headers.empresa;
             const results = await this._repository.get(params);
             ResponseHelper.response(res, { results }, HttpStatusCode.OK);
