@@ -5,11 +5,11 @@ import fs from 'fs';
 import path from 'path';
 
 export default class UserRepository extends BaseRepository {
-  public async get(empresa: string): Promise<IUserGET> {
-    const entityManager = getManager(empresa);
+  //Promise<IUserGET
+  public async get(): Promise<IUserGET> {
+    const conn = await this.openConnection();
     const sqlText = this.getSqlText('../sql/users/user.get.sql');
-
-    let query = await entityManager.query(sqlText);
-    return query;
+    const result = await conn.request().query(sqlText);
+    return result.recordset[0];
   }
 }

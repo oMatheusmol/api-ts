@@ -11,7 +11,7 @@
     "deploy": "npm i & npm run build & pm2 delete ecosystem.config.yaml & pm2 start ecosystem.config.yaml",
     "restart": "pm2 delete ecosystem.config.yaml & pm2 start ecosystem.config.yaml",
     "stop": "pm2 delete ecosystem.config.yaml",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "test:silent": "jest --watchAll --silent --noStackTrace"
   },
   "devDependencies": {

@@ -28,7 +28,7 @@ class AppController {
 
   controllers() {
     this.app.use('/login', AuthController);
-    this.app.use('/user', ControllerMiddleware, Controllers);
+    this.app.use('/user', Controllers);
   }
 }
 

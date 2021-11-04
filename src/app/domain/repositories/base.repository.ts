@@ -5,6 +5,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import ArrayUtil from '../../common/utils/array.util';
+import appConfig from '../../../infra/config/app.config';
 
 /**
  * Camada de acesso a banco de dados
@@ -15,6 +16,19 @@ export default class BaseRepository {
 
   constructor(config?, debug = false) {
     this.debug = debug;
+  }
+
+  async openConnection() {
+    const pool = new mssql.ConnectionPool(appConfig.mssqlConfig).connect();
+    return await pool;
+  }
+
+  async openConnectionConfig(config) {
+      if (!config) {
+          throw new Error('Environment database config not found');
+      }
+      const pool = new mssql.ConnectionPool(config).connect();
+      return await pool;
   }
 
   toParamsPagination(params) {

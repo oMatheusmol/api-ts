@@ -1,24 +1,33 @@
 {
+  "ENV": "development",
   "SERVER": {
-    "NAME": "API Typescript",
-    "PORT": 7000,
-    "HOST": "http://localhost",
-    "AUTH": {
-      "USER": "admin_info_dev",
-      "PASSWORD": "$2y$08$a6RXfAuDIvaTQg5fQdoToO2zvyv2UEJkJF1NWeL9FgSoACf38wyQG",
-      "SECRET": "68324255bd122b4054aa472cb7fb8f6b"
-    },
-    "TEST_TOKEN": ""
+      "HOST": "http://localhost",
+      "PORT": 7000
   },
-  "DATABASE": {
-    "16": {
-      "TYPE": "mssql",
-      "INSTANCE_NAME": "1433",
-      "USER": "sa",
-      "PASSWORD": "testeDb",
-      "HOST": "INFOSISTEMAS116\\SQLEXPRESS",
-      "PORT": 1433,
-      "NAME": "testeDb"
-    }
+  "TEST": {
+      "HOST": "http://localhost",
+      "PORT": 7000
+  },
+  "DB": {
+      "MSSQL": {
+          "HOST": "INFOSISTEMAS116\\SQLEXPRESS",
+          "PORT": 1433,
+          "USER": "sa",
+          "PASSWORD": "testeDb",
+          "DATABASE": "testeDb",
+          "CONNECTION_TIMEOUT": 20000,
+          "REQUEST_TIMEOUT": 30000,
+          "POOL": {
+              "MAX": 20,
+              "MIN": 1
+          },
+          "OPTIONS": {
+              "ENCRYPT": false
+          }
+      }
+  },
+ "AUTH": {
+      "LOGIN": "infosistemas",
+      "PASSWORD": "@p1_!nF0sI$t3m@s"
   }
 }
