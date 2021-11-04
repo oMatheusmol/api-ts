@@ -27,7 +27,8 @@
       }
   },
  "AUTH": {
-      "LOGIN": "infosistemas",
-      "PASSWORD": "@p1_!nF0sI$t3m@s"
+      "LOGIN": "admin",
+      "PASSWORD": "admin",
+      "SECRET": "chave*"
   }
 }

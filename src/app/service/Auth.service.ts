@@ -1,20 +1,17 @@
 import GenerateUserToken from '../common/utils/generateToken.util';
+import config from 'config';
 
 class AuthService {
   public async login(username: string, password: string): Promise<any> {
-    const user = { username, password };
 
-    if (!user) {
-      throw new Error('Usuário não encontrado');
-    }
+    const user = config.get('AUTH.LOGIN')
+    const pass = config.get('AUTH.PASSWORD')
 
-    if (password !== user.password || username !== user.username) {
+    if (password !== pass || username !== user) {
       throw new Error('Username ou senha incorretos');
     }
 
-    user.password = undefined;
-
-    console.info(`User ${user.username.toUpperCase()} logado.`);
+    console.info(`User ${user.toUpperCase()} logado.`);
 
     return { user, token: GenerateUserToken(username) };
   }

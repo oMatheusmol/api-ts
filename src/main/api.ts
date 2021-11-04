@@ -8,7 +8,6 @@ import YAML from 'yamljs';
 import AuthController from '../app/controllers/auth/auth.controller';
 import Controllers from '../app/routes/index.routes';
 import path from 'path';
-import { ControllerMiddleware } from '../app/middlewares/controller.middleware';
 
 class AppController {
   constructor(public app = express()) {
@@ -24,6 +23,7 @@ class AppController {
 
     const swaggerDocument = YAML.load(path.resolve(__dirname, '../app/docs/swagger.yaml'));
     this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    
   }
 
   controllers() {

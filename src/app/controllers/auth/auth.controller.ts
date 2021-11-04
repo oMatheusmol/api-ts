@@ -1,14 +1,13 @@
 import { Request, Response, Router } from 'express';
-import AuthService from '../../service/auth.service';
+import authService from '../../service/auth.service';
 
 const AuthRouter = Router();
-const ControllerName = '/fca_login';
 
-AuthRouter.post(`${ControllerName}/auth/login`, async (req: Request, res: Response) => {
+AuthRouter.post('', async (req: Request, res: Response) => {
   try {
     const { username, password } = req.body;
 
-    const user = await AuthService.login(username, password);
+    const user = await authService.login(username, password);
     if (!user) {
       throw new Error('User not authorized');
     }
