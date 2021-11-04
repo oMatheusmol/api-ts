@@ -19,8 +19,7 @@ export const AuthMiddleware = (req: any, res: Response) => {
 
     const [schema, token] = tokenParts;
 
-    if (!/^Bearer$/i.test(schema))
-      return req.res.status(401).send({ error: 'Token unformatted' });
+    if (!/^Bearer$/i.test(schema)) return req.res.status(401).send({ error: 'Token unformatted' });
 
     verify(token, tokenSecret, async (err: any, decoded: any) => {
       try {

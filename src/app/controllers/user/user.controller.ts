@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import ReservaRepository from '../../domain/repositories/user/user.repository';
+import UserRepository from '../../domain/repositories/user/user.repository';
 import BaseController from '../base.controller';
 const router = Router();
 
-export default new class ReservasController extends BaseController {
+export default new (class UserController extends BaseController {
   constructor() {
-    super(new ReservaRepository());
+    super(new UserRepository());
   }
-}
+})();

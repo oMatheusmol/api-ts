@@ -1,9 +1,9 @@
 import express, { Router } from 'express';
 import path from 'path';
-import ReservasRoutes from './Reservas.routes';
+import userRoutes from './user.routes';
 
 const router = Router();
 
-router.use('/reservas', ReservasRoutes);
+router.use('', userRoutes);
 
 export default router;

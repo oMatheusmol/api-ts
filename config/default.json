@@ -1,8 +1,8 @@
 {
   "SERVER": {
-    "NAME": "Api Reservas Info",
+    "NAME": "API Typescript",
     "PORT": 7000,
-    "HOST": "https://apilocaviahml.infosistemas.com.br:3015",
+    "HOST": "http://localhost",
     "AUTH": {
       "USER": "admin_info_dev",
       "PASSWORD": "$2y$08$a6RXfAuDIvaTQg5fQdoToO2zvyv2UEJkJF1NWeL9FgSoACf38wyQG",

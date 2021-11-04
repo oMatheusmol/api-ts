@@ -1,5 +1,5 @@
-import { createConnections } from "typeorm";
-import config from "config";
+import { createConnections } from 'typeorm';
+import config from 'config';
 
 export const databaseConnect = async (empresa) => {
   try {
@@ -15,27 +15,27 @@ export const databaseConnect = async (empresa) => {
           username: data[1].USER,
           password: data[1].PASSWORD,
           database: data[1].NAME,
-          entities: ["./src/**/*.model.ts"],
+          entities: ['./src/**/*.model.ts'],
           extra: {
             insecureAuth: true,
           },
           options: {
             enableArithAbort: false,
             cryptoCredentialsDetails: {
-              minVersion: 'TLSv1'
-            }
+              minVersion: 'TLSv1',
+            },
           },
-        }
+        };
       });
 
-      console.log("Starting Database connections");
+      console.log('Starting Database connections');
       await createConnections(options);
 
-      console.log("Databases connected...");
+      console.log('Databases connected...');
     }
 
-    process.env["DATABASE_NAME"] = database.NAME;
+    process.env['DATABASE_NAME'] = database.NAME;
   } catch (err) {
-    console.error("Error in Database Connection: ", err.message);
+    console.error('Error in Database Connection: ', err.message);
   }
 };

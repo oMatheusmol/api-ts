@@ -12,25 +12,19 @@ const startup = async () => {
   console.info(`Using Environment: ${environment}`);
   console.info(`Process ID: ${process.pid}`);
   console.info('Starting API...');
-  
 
   const options = {};
 
   const server = Object.keys(options).length > 0 ? https.createServer(options, app) : http.createServer(app);
 
-  server.listen(port, () =>
-    console.log(`API running in port: ${port}`)
-  );
-
+  server.listen(port, () => console.log(`API running in port: ${port}`));
 };
 
-(
-  async () => {
+(async () => {
   try {
     await startup();
   } catch (err) {
     console.error('Error in API Connection: ', err.message);
     process.exit(1);
   }
-}
-)();
+})();
