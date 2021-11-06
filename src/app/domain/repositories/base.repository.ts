@@ -152,7 +152,7 @@ export default class BaseRepository {
   /**
    * Identifica e lança a exceção
    */
-  handleError(err, sqlType, methodName) {
+  handleError(err:Error, sqlType?:string, methodName?:string) {
     if (this.debug) {
       console.log(err);
     }
@@ -160,7 +160,7 @@ export default class BaseRepository {
       throw new Error(`${sqlType}:base_repository.${methodName}; msg:${err.message};code:${err.code}`);
     }
 
-    if (err instanceof mssql.RequestError || err.class) {
+    if (err instanceof mssql.RequestError) {
       throw new Error(err.message);
     }
     throw err;

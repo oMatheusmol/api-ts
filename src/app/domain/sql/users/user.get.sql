@@ -5,3 +5,4 @@ Email AS email,
 Username AS username,
 Password AS password
 FROM Users
+WHERE UserID = @UserID;

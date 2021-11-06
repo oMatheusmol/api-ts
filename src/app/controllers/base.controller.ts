@@ -17,8 +17,8 @@ export default class BaseController {
 
   async get(req: any, res: any) {
     try {
-      const params = req.headers.empresa;
-      const results = await this._repository.get(params);
+      req.body.userID = Number(req.headers.userid);
+      const results = await this._repository.get(req.body);
       ResponseHelper.response(res, results, HttpStatusCode.OK);
     } catch (err) {
       ResponseHelper.error(res, err, HttpStatusCode.INTERNAL_SERVER_ERROR);
@@ -55,9 +55,8 @@ export default class BaseController {
 
   async patch(req: Request, res: Response) {
     try {
-      const id = req.query.id;
       const body = req.body;
-      const result = await this._repository.patch(id, body);
+      const result = await this._repository.patch(body);
       ResponseHelper.response(res, result, HttpStatusCode.OK);
     } catch (err) {
       if (err instanceof DOMException) {

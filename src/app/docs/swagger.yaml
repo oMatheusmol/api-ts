@@ -96,6 +96,34 @@ paths:
           $ref: '#/components/responses/unauthorizedResponse'
         500:
           $ref: '#/components/responses/internalServerErrorResponse'
+    post:
+      tags:
+        - User
+      summary: Cadastra Usuario
+      operationId: postUser
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/userpost'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/messageResponse'
+        400:
+          $ref: '#/components/responses/badRequestResponse'
+        401:
+          $ref: '#/components/responses/unauthorizedResponse'
+        500:
+          $ref: '#/components/responses/internalServerErrorResponse'
  
 components:
   responses:
@@ -163,11 +191,33 @@ components:
               type: string
             token:
               type: string
+
+    messageResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            message:
+              type: string
+
     user:
       type: 'object'
       properties:
         userID:
           type: 'number'
+        name:
+          type: 'string'
+        email:
+          type: 'string'
+        username:
+          type: 'string'
+        password:
+          type: 'string'
+
+    userpost:
+      type: 'object'
+      properties:
         name:
           type: 'string'
         email:

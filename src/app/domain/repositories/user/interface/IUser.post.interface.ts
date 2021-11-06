@@ -1,5 +1,4 @@
-export default interface IUserGET {
-  userID: number;
+export default interface IUserPOST {
   name: string;
   email: string;
   username: string;
