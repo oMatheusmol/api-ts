@@ -1,0 +1,1 @@
+Delete Users WHERE UserID = @UserID;

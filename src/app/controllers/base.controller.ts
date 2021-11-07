@@ -69,8 +69,7 @@ export default class BaseController {
 
   async deleteById(req: Request, res: Response) {
     try {
-      const id = req.query.id;
-      const result = await this._repository.deleteById(id);
+      const result = await this._repository.delete(req.query);
       ResponseHelper.response(res, result, HttpStatusCode.OK);
     } catch (err) {
       ResponseHelper.error(res, err, HttpStatusCode.INTERNAL_SERVER_ERROR);

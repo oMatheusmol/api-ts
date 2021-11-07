@@ -53,4 +53,16 @@ export default class UserRepository extends BaseRepository {
       return this.handleError(e, 'users', 'post');
     }
   }
+
+  public async delete(data: IUserPATCH): Promise<any> {
+    try {
+      const conn = await this.openConnection();
+      const sqlText = this.getSqlText('../sql/users/user.delete.sql');
+      const result = await conn.request().input('UserID', mssql.Int, data.userID).query(sqlText);
+
+      return { message: 'User deleted successfully' };
+    } catch (e) {
+      return this.handleError(e, 'users', 'post');
+    }
+  }
 }

@@ -124,6 +124,64 @@ paths:
           $ref: '#/components/responses/unauthorizedResponse'
         500:
           $ref: '#/components/responses/internalServerErrorResponse'
+    patch:
+      tags:
+        - User
+      summary: Altera cadastra Usuario
+      operationId: patchtUser
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/userpost'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/messageResponse'
+        400:
+          $ref: '#/components/responses/badRequestResponse'
+        401:
+          $ref: '#/components/responses/unauthorizedResponse'
+        500:
+          $ref: '#/components/responses/internalServerErrorResponse'
+    delete:
+      tags:
+        - User
+      summary: Altera cadastra Usuario
+      operationId: patchtUser
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - in: query
+          name: userID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/messageResponse'
+        400:
+          $ref: '#/components/responses/badRequestResponse'
+        401:
+          $ref: '#/components/responses/unauthorizedResponse'
+        500:
+          $ref: '#/components/responses/internalServerErrorResponse'
  
 components:
   responses:

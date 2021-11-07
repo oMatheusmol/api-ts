@@ -6,11 +6,11 @@ import IUserPATCH from '../../domain/repositories/user/interface/IUser.patch.int
 describe('Users, GET', () => {
   it('should get user', async () => {
     const iExpect = {
-      userID: 1,
-      name: 'M',
-      email: 'matheus@test.com',
-      username: 'admin',
-      password: 't',
+      userID: 28,
+      name: 'Matheus',
+      email: 'matheus@hotmail.com',
+      username: 'matheusmol',
+      password: 'teste',
     };
     const sut = new UserRepository();
     const result: IUserGET = await sut.get(iExpect);
@@ -37,13 +37,25 @@ describe('Users, GET', () => {
 describe('Users, PATCH', () => {
   it('should update user', async () => {
     const Idata: IUserPATCH = {
-      userID: 1,
-      email: 'matheus@test.com',
-      username: 'admin',
+      userID: 28,
+      email: 'matheus@hotmail.com',
+      username: 'matheusmol',
     };
     const sut = new UserRepository();
     const result = await sut.patch(Idata);
 
     expect(result).toStrictEqual({ message: 'User updated successfully' });
+  });
+});
+
+describe('Users, DELETE', () => {
+  it('should delete user', async () => {
+    const Idata: IUserPATCH = {
+      userID: 9,
+    };
+    const sut = new UserRepository();
+    const result = await sut.delete(Idata);
+
+    expect(result).toStrictEqual({ message: 'User deleted successfully' });
   });
 });
