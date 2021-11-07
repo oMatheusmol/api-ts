@@ -3,21 +3,21 @@ import IUserGET from '../../domain/repositories/user/interface/IUser.get.interfa
 import IUserPOST from '../../domain/repositories/user/interface/IUser.post.interface';
 import IUserPATCH from '../../domain/repositories/user/interface/IUser.patch.interface';
 
-describe('Users, GET', () => {
-  it('should get user', async () => {
-    const iExpect = {
-      userID: 28,
-      name: 'Matheus',
-      email: 'matheus@hotmail.com',
-      username: 'matheusmol',
-      password: 'teste',
-    };
-    const sut = new UserRepository();
-    const result: IUserGET = await sut.get(iExpect);
+// describe('Users, GET', () => {
+//   it('should get user', async () => {
+//     const iExpect = {
+//       userID: 28,
+//       name: 'Matheus',
+//       email: 'matheus@hotmail.com',
+//       username: 'matheusmol',
+//       password: 'teste',
+//     };
+//     const sut = new UserRepository();
+//     const result: IUserGET = await sut.get(iExpect);
 
-    expect(iExpect).toMatchObject(result);
-  });
-});
+//     expect(iExpect).toMatchObject(result);
+//   });
+// });
 
 // describe('Users, POST', () => {
 //   it('should create user', async () => {
@@ -34,28 +34,28 @@ describe('Users, GET', () => {
 //   });
 // });
 
-describe('Users, PATCH', () => {
-  it('should update user', async () => {
-    const Idata: IUserPATCH = {
-      userID: 28,
-      email: 'matheus@hotmail.com',
-      username: 'matheusmol',
-    };
-    const sut = new UserRepository();
-    const result = await sut.patch(Idata);
+// describe('Users, PATCH', () => {
+//   it('should update user', async () => {
+//     const Idata: IUserPATCH = {
+//       userID: 28,
+//       email: 'matheus@hotmail.com',
+//       username: 'matheusmol',
+//     };
+//     const sut = new UserRepository();
+//     const result = await sut.patch(Idata);
 
-    expect(result).toStrictEqual({ message: 'User updated successfully' });
-  });
-});
+//     expect(result).toStrictEqual({ message: 'User updated successfully' });
+//   });
+// });
 
-describe('Users, DELETE', () => {
-  it('should delete user', async () => {
-    const Idata: IUserPATCH = {
-      userID: 9,
-    };
-    const sut = new UserRepository();
-    const result = await sut.delete(Idata);
+// describe('Users, DELETE', () => {
+//   it('should delete user', async () => {
+//     const Idata: IUserPATCH = {
+//       userID: 9,
+//     };
+//     const sut = new UserRepository();
+//     const result = await sut.delete(Idata);
 
-    expect(result).toStrictEqual({ message: 'User deleted successfully' });
-  });
-});
+//     expect(result).toStrictEqual({ message: 'User deleted successfully' });
+//   });
+// });

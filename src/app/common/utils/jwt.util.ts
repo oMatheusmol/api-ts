@@ -1,40 +1,42 @@
 'use strict';
 
-import jwt from 'jsonwebtoken';
+import {verify} from 'jsonwebtoken';
+import { get } from 'config';
+import { Request, Response } from 'express';
 //import cert from '../../../infra/config/auth.json';
 
 export default class JwtUtil {
 
-    static sign(data, exp) {
-        return new Promise(function (resolve, reject) {
-            // validade de 1 dia
-            // data.expiresIn = 86400;
-            // jwt.sign(data, cert.secret, { expiresIn: exp || '1d' }, function (err, token) {
-            //     if (err) {
-            //         reject(err);
-            //     } else {
-            //         resolve(token);
-            //     }
-            // });
-        });
-    }
-
-    static verify(token, secretOrPublicKey, callback) {
-        try {
-            const decoded = jwt.verify(token, secretOrPublicKey, callback);
-            return decoded;
-        } catch (err) {
-            console.log(err.message);
+    static verifyApiKey = async (req:Request, res:Response, next) => {
+        // Get auth header value
+        const token: any = req.headers['x-api-key'];
+      
+        //exist token
+        if (token) {
+          //pre validation
+          if (!token.length > 1 && !token.length < 170) {
+            req.tokenError = `Token jwt invalid`;
             return false;
+          }
+          // Verify token
+          const secret: string = get('AUTH.SECRET');
+          const isValid = verify(token, secret, (err, decoded) => {
+            //invalid token (expired or other)
+            if (err) {
+              req.tokenError = `Token ${err.message}`;
+              return false;
+            } else {
+              // Save session in request
+              req.security = decoded.data;
+              return true;
+            }
+          });
+          return next();
+        } else {
+          //token error
+          throw new Error('Token is required. Access Denied');
         }
-    }
-
-    static decode(token) {
-        try {
-            const decoded = jwt.decode(token);
-            return decoded;
-        } catch (err) {
-            return null;
-        }
-    }
+      };
+  static verifyToken: any;
+      
 }

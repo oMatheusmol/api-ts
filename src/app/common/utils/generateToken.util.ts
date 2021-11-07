@@ -7,3 +7,5 @@ export default function GenerateUserToken(username: string) {
 
   return token;
 }
+
+

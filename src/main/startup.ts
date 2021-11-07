@@ -1,5 +1,5 @@
 import { get } from 'config';
-import app from './api';
+import app from '../app/middlewares/api';
 import http from 'http';
 import https from 'https';
 import * as dotenv from 'dotenv';
