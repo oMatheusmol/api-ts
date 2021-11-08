@@ -50,7 +50,7 @@ export default class UserRepository extends BaseRepository {
 
       return { message: 'User updated successfully' };
     } catch (e) {
-      return this.handleError(e, 'users', 'post');
+      return this.handleError(e, 'users', 'patch');
     }
   }
 
@@ -62,7 +62,7 @@ export default class UserRepository extends BaseRepository {
 
       return { message: 'User deleted successfully' };
     } catch (e) {
-      return this.handleError(e, 'users', 'post');
+      return this.handleError(e, 'users', 'delete');
     }
   }
 }

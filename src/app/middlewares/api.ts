@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
-import AuthController from '../controllers/auth/auth.controller';
+import AuthRouter from '../routes/auth.routes';
 import Controllers from '../routes/index.routes';
 import path from 'path';
 import { ControllerMiddleware } from './controller.middleware';
@@ -28,7 +28,7 @@ class AppController {
   }
 
   controllers() {
-    this.app.use('/login', AuthController);
+    this.app.use('/login', AuthRouter);
     this.app.use('/user', ControllerMiddleware, Controllers);
   }
 }

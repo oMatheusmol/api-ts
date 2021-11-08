@@ -1,19 +1,18 @@
-import { Request, Response, Router } from 'express';
-import authService from '../../service/auth.service';
+import GenerateUserToken from '../../common/utils/generateToken.util';
+import config from 'config';
 
-const AuthRouter = Router();
+export default new class AuthService {
+  public async login(username: string, password: string): Promise<any> {
 
-AuthRouter.post('', async (req: Request, res: Response) => {
-  try {
-    const { username, password } = req.body;
+    const user = config.get('AUTH.LOGIN')
+    const pass = config.get('AUTH.PASSWORD')
 
-    const user = await authService.login(username, password);
-    if (!user) {
-      throw new Error('User not authorized');
+    if (password !== pass || username !== user) {
+      throw new Error('Username ou senha incorretos');
     }
-    res.status(200).send(user);
-  } catch (err) {
-    res.status(401).send({ error: err.message });
+
+    console.info(`User ${user.toUpperCase()} logado.`);
+
+    return { user, token: GenerateUserToken(username) };
   }
-});
-export default AuthRouter;
+}
