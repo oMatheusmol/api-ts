@@ -1,34 +1,34 @@
 {
   "ENV": "development",
   "SERVER": {
-      "HOST": "http://localhost",
-      "PORT": 7000
+    "HOST": "http://localhost",
+    "PORT": 7000
   },
   "TEST": {
-      "HOST": "http://localhost",
-      "PORT": 7000
+    "HOST": "http://localhost",
+    "PORT": 7000
   },
   "DB": {
-      "MSSQL": {
-          "HOST": "INFOSISTEMAS116\\SQLEXPRESS",
-          "PORT": 1433,
-          "USER": "sa",
-          "PASSWORD": "testeDb",
-          "DATABASE": "testeDb",
-          "CONNECTION_TIMEOUT": 20000,
-          "REQUEST_TIMEOUT": 30000,
-          "POOL": {
-              "MAX": 20,
-              "MIN": 1
-          },
-          "OPTIONS": {
-              "ENCRYPT": false
-          }
+    "MSSQL": {
+      "HOST": "127.0.0.1",
+      "PORT": 1433,
+      "USER": "sa",
+      "PASSWORD": "1q2w3e4r@#$",
+      "DATABASE": "test",
+      "CONNECTION_TIMEOUT": 20000,
+      "REQUEST_TIMEOUT": 30000,
+      "POOL": {
+        "MAX": 20,
+        "MIN": 1
+      },
+      "OPTIONS": {
+        "ENCRYPT": false
       }
+    }
   },
- "AUTH": {
-      "LOGIN": "admin",
-      "PASSWORD": "admin",
-      "SECRET": "chave*"
+  "AUTH": {
+    "LOGIN": "admin",
+    "PASSWORD": "admin",
+    "SECRET": "chave*"
   }
 }
